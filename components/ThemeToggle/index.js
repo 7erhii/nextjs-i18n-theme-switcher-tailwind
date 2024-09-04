@@ -20,7 +20,9 @@ export default function ThemeToggle() {
       root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       if (prefersDark) {
         root.classList.add("dark");
       } else {
@@ -33,13 +35,22 @@ export default function ThemeToggle() {
 
   return (
     <div className="flex space-x-2">
-      <Button onClick={() => applyTheme("system")} variant={theme === "system" ? "default" : "outline"}>
+      <Button
+        onClick={() => applyTheme("system")}
+        variant={theme === "system" ? "default" : "outline"}
+      >
         <Monitor className="h-5 w-5" />
       </Button>
-      <Button onClick={() => applyTheme("light")} variant={theme === "light" ? "default" : "outline"}>
+      <Button
+        onClick={() => applyTheme("light")}
+        variant={theme === "light" ? "default" : "outline"}
+      >
         <Sun className="h-5 w-5" />
       </Button>
-      <Button onClick={() => applyTheme("dark")} variant={theme === "dark" ? "default" : "outline"}>
+      <Button
+        onClick={() => applyTheme("dark")}
+        variant={theme === "dark" ? "default" : "outline"}
+      >
         <Moon className="h-5 w-5" />
       </Button>
     </div>
